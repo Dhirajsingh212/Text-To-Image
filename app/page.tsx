@@ -19,6 +19,10 @@ export default function Component() {
       const response = await axios.post('api/genImage', { text: inputText })
       if (response && response.data.imageUrl) {
         setGeneratedImage(response.data.imageUrl)
+      } else {
+        setGeneratedImage(
+          'https://img.freepik.com/free-vector/404-error-web-template-with-funny-monster_23-2147788955.jpg?t=st=1728115629~exp=1728119229~hmac=1c8dcfed29a2de1670a1f68be30bcdccef22d307119204484be1206242555c17&w=740'
+        )
       }
     } catch (error) {
       console.error('Failed to generate image:', error)
